@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        build 'djangodocker'
+        build(job: 'djangodocker', propagate: true)
         archiveArtifacts 'a'
         pwd()
       }
